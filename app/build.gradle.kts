@@ -6,9 +6,7 @@ plugins {
 android {
     namespace = "net.iessochoa.sergiocontreras.colepizza"
     compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
+        version = release(37)
     }
 
     defaultConfig {

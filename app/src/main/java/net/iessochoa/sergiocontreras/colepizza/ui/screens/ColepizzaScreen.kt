@@ -1,4 +1,4 @@
-package net.iessochoa.sergiocontreras.colepizza.ui
+package net.iessochoa.sergiocontreras.colepizza.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,7 +10,7 @@ import net.iessochoa.sergiocontreras.colepizza.ui.components.MenuRow
 fun ColepizzaScreen() {
 
     val fullMenu = listOf(
-        "AGUA","ENTRANTE","PRIMER PLATO", "SEGUNDO PLATO", "POSTRE2"
+        "ENTRANTE","PRIMERO", "SEGUNDO", "POSTRE"
     )
     Column(
         verticalArrangement = Arrangement.Center

@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import net.iessochoa.sergiocontreras.colepizza.ui.screens.MainScreen
 import net.iessochoa.sergiocontreras.colepizza.ui.theme.ColepizzaTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,25 +21,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             ColepizzaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-
+                    MainScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ColepizzaTheme {
-        Greeting("Android")
     }
 }
