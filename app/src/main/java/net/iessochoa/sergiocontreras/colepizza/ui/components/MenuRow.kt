@@ -3,6 +3,7 @@ package net.iessochoa.sergiocontreras.colepizza.ui.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -20,17 +21,21 @@ fun MenuRow(
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
+        horizontalArrangement = Arrangement.SpaceBetween,
+        modifier = modifier.fillMaxWidth()
     ) {
         Image(
             painter = painterResource(R.drawable.ic_launcher_foreground),
-            contentDescription = null
+            contentDescription = null,
+            modifier = Modifier.weight(1f)
         )
         Text(item,
-            modifier=Modifier.weight(1f))
-        RadioButton(
-            true,
-            {}
+            modifier=Modifier.weight(1f)
+        )
+
+        SmileyRating(
+            modifier = Modifier.weight(2f)
+
         )
 
     }

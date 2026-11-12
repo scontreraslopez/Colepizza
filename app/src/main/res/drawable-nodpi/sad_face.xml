@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Contorno -->
+    <path
+        android:pathData="M12,2a10,10 0,1 1,0 20a10,10 0,1 1,0 -20z"
+        android:strokeColor="#E02424"
+        android:strokeWidth="1.6"
+        android:fillColor="#00000000" />
+
+    <!-- Ojos -->
+    <path
+        android:pathData="M8.5,8.25a1.25,1.25 0,1 1,0 2.5a1.25,1.25 0,1 1,0 -2.5z M15.5,8.25a1.25,1.25 0,1 1,0 2.5a1.25,1.25 0,1 1,0 -2.5z"
+        android:fillColor="#E02424" />
+
+    <!-- Boca -->
+    <path
+        android:pathData="M7.5,17 Q12,12.5 16.5,17"
+        android:strokeColor="#E02424"
+        android:strokeWidth="1.6"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+</vector>
