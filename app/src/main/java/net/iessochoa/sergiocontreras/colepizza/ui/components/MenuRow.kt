@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -16,8 +18,11 @@ import net.iessochoa.sergiocontreras.colepizza.R
 @Composable
 fun MenuRow(
     item: String,
+    selection: Int,
+    onSelection: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
+
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
@@ -34,7 +39,9 @@ fun MenuRow(
         )
 
         SmileyRating(
-            modifier = Modifier.weight(2f)
+            modifier = Modifier.weight(2f),
+            selection = selection,
+            onSelection = onSelection
 
         )
 
@@ -43,4 +50,4 @@ fun MenuRow(
 
 @Preview (showBackground = true)
 @Composable
-fun MenuRowPreview() = MenuRow("ENTRANTE")
+fun MenuRowPreview() = MenuRow("ENTRANTE", 2, {})

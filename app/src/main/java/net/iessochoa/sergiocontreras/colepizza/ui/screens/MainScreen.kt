@@ -19,7 +19,6 @@ fun MainScreen(
     val daysOfWeek = listOf("Lunes", "Martes", "Miércoles", "Jueves", "Viernes")
     LazyColumn(
         modifier = modifier
-
     ) {
         items(daysOfWeek) { day ->
             Button(
