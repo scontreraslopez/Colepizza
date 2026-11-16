@@ -23,7 +23,6 @@ fun ColepizzaScreen(
     val selectionList: SnapshotStateList<Rating> = remember {
         fullMenu.map { Rating.NEUTRAL }.toMutableStateList()
     }
-
     Column(
         modifier = modifier,
         verticalArrangement = Arrangement.Center
@@ -36,9 +35,7 @@ fun ColepizzaScreen(
                 onSelection = { selectionList[index] = it }
             )
         }
-
     }
-
 }
 
 @Preview(showBackground = true)
