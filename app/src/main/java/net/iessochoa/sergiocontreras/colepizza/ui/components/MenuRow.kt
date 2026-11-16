@@ -9,29 +9,33 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import net.iessochoa.sergiocontreras.colepizza.R
 import net.iessochoa.sergiocontreras.colepizza.ui.theme.ColepizzaTheme
 
 @Composable
 fun MenuRow(
-    item: String,
+    item: MenuItem,
     selection: Rating,
     onSelection: (Rating) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val itemName = stringResource(item.labelRes)
+    val itemImage = painterResource(item.iconRes)
     Row(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = modifier.fillMaxWidth()
     ) {
         Image(
-            painter = painterResource(R.drawable.ic_launcher_foreground),
+            painter = itemImage,
             contentDescription = null,
             modifier = Modifier.weight(1f)
         )
-        Text(item,
-            modifier=Modifier.weight(1f)
+        Text(
+            text = itemName,
+            modifier = Modifier.weight(1f)
         )
         SmileyRating(
             modifier = Modifier.weight(2f),
@@ -47,7 +51,7 @@ fun MenuRow(
 fun MenuRowPreview() =
     ColepizzaTheme{
         MenuRow(
-            item = "ENTRANTE",
+            item = MenuItem.entries.first(),
             selection = Rating.NEUTRAL,
             onSelection = {}
         )

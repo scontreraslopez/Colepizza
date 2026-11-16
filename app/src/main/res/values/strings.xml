@@ -3,4 +3,9 @@
     <string name="smiley_happy">Contento</string>
     <string name="smiley_neutral">Normal</string>
     <string name="smiley_sad">Triste</string>
+    <string name="menu_water">Agua</string>
+    <string name="menu_starter">Entrante</string>
+    <string name="menu_first_course">Primer Plato</string>
+    <string name="menu_main_course">Segundo Plato</string>
+    <string name="menu_dessert">Postre</string>
 </resources>
