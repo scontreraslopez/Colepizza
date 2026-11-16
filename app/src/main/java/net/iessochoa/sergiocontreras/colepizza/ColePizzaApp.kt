@@ -5,9 +5,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import net.iessochoa.sergiocontreras.colepizza.ui.ColepizzaScreen
-import net.iessochoa.sergiocontreras.colepizza.ui.screens.MainScreen
+import net.iessochoa.sergiocontreras.colepizza.ui.screens.ColepizzaScreen
 import net.iessochoa.sergiocontreras.colepizza.ui.theme.ColepizzaTheme
 
 /**
