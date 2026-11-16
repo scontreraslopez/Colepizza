@@ -2,6 +2,7 @@ package net.iessochoa.sergiocontreras.colepizza.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshots.SnapshotStateList
@@ -24,7 +25,8 @@ fun ColepizzaScreen(
         fullMenu.map { Rating.NEUTRAL }.toMutableStateList()
     }
     Column(
-        modifier = modifier,
+        modifier = modifier
+            .fillMaxSize(),
         verticalArrangement = Arrangement.Center
     ) {
         fullMenu.forEachIndexed { index, menuItem ->

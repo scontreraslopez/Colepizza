@@ -17,10 +17,9 @@ import net.iessochoa.sergiocontreras.colepizza.ui.theme.ColepizzaTheme
  */
 
 @Composable
-fun ColePizzaApp () {
+fun ColepizzaApp () {
     ColepizzaTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-           //MainScreen(
             ColepizzaScreen(
                 modifier = Modifier.padding(innerPadding)
             )
