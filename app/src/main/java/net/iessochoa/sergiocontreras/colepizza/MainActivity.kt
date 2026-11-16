@@ -19,6 +19,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+<<<<<<< HEAD
             ColepizzaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     MainScreen(modifier = Modifier.padding(innerPadding))
@@ -27,3 +28,10 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+=======
+            ColePizzaApp()
+        }
+    }
+}
+
+>>>>>>> 5ac1bf0ff7cbf26813ae1aeacaf60df3c9f3c1ad
