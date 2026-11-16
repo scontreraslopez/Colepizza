@@ -31,11 +31,3 @@ fun ColePizzaApp () {
     }
 }
 
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() =
-    ColepizzaTheme {
-        ColePizzaApp()
-
-    }

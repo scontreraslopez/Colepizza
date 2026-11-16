@@ -12,7 +12,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
@@ -27,71 +26,33 @@ fun SmileyRating (
     selection: Int,
     onSelection: (Int) -> Unit
 ) {
+
     Row(
         modifier = modifier
             .fillMaxWidth()
             .selectableGroup(),
         horizontalArrangement = Arrangement.SpaceAround
     ) {
-
-        Image(
-            painter = painterResource(R.drawable.happy_face),
-            contentDescription = null,
-            modifier = Modifier
-                .selectable(
-                    selected = selection == 1,
-                    onClick = { onSelection(1) },
-                    role = Role.RadioButton
-                )
-                .clip(CircleShape)
-
-                .border(
-                    width = if (selection == 1) 3.dp else 1.dp,
-                    color = if (selection == 1) MaterialTheme.colorScheme.primary
-                    else MaterialTheme.colorScheme.outline,
-                    shape = CircleShape
-                )
-
+        SmileySelectable(
+            smileyRes = R.drawable.happy_face,
+            option = 1,
+            selectedOption = selection,
+            onSelection = { onSelection(1) }
+        )
+        SmileySelectable(
+            smileyRes = R.drawable.neutral_face,
+            option = 2,
+            selectedOption = selection,
+            onSelection = { onSelection(2) }
+        )
+        SmileySelectable(
+            smileyRes = R.drawable.sad_face,
+            option = 3,
+            selectedOption = selection,
+            onSelection = { onSelection(3) }
         )
 
-        Image(
-            painter = painterResource(R.drawable.neutral_face),
-            contentDescription = null,
-            modifier = Modifier
-                .selectable(
-                    selected = selection == 2,
-                    onClick = { onSelection(2) },
-                    role = Role.RadioButton
-                )
-                .clip(CircleShape)
 
-                .border(
-                    width = if (selection == 2) 3.dp else 1.dp,
-                    color = if (selection == 2) MaterialTheme.colorScheme.primary
-                    else MaterialTheme.colorScheme.outline,
-                    shape = CircleShape
-                )
-
-        )
-
-        Image(
-            painter = painterResource(R.drawable.sad_face),
-            contentDescription = null,
-            modifier = Modifier
-                .selectable(
-                    selected = selection == 3,
-                    onClick = { onSelection(3) },
-                    role = Role.RadioButton
-                )
-                .clip(CircleShape)
-                .border(
-                    width = if (selection == 3) 3.dp else 1.dp,
-                    color = if (selection == 3) MaterialTheme.colorScheme.primary
-                    else MaterialTheme.colorScheme.outline,
-                    shape = CircleShape
-                )
-
-        )
 
     }
 }

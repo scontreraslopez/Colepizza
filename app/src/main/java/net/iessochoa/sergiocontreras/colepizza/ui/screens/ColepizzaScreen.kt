@@ -9,6 +9,7 @@ import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import net.iessochoa.sergiocontreras.colepizza.ui.components.MenuRow
+import net.iessochoa.sergiocontreras.colepizza.ui.theme.ColepizzaTheme
 
 @Composable
 fun ColepizzaScreen(
@@ -41,4 +42,8 @@ fun ColepizzaScreen(
 
 @Preview (showBackground = true)
 @Composable
-fun ColepizzaScreenPreview()= ColepizzaScreen()
+fun ColepizzaScreenPreview() {
+    ColepizzaTheme {
+        ColepizzaScreen()
+    }
+}
