@@ -35,6 +35,8 @@ Partido a partido 🙂. Iremos añadiendo piezas según las vayamos aprendiendo:
 - [x] Componentes Compose reutilizables y estado elevado
 - [x] Modelar las opciones con `enum` en lugar de `Int`
 - [x] Asociar cada plato a su icono (`enum class MenuItem`)
+- [ ] **UI state**: valoraciones por día, puntuación y botones de colores
+  ([guía paso a paso](docs/guia-ui-state.md))
 - [ ] **Navegación** con Navigation Compose: lista de días → menú del día
 - [ ] **MVVM**: sacar el estado a un `ViewModel` con `StateFlow`, que también sobrevive a la rotación
 - [ ] **Room**, quizá: guardar las valoraciones de forma persistente
