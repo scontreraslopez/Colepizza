@@ -9,36 +9,37 @@ import net.iessochoa.sergiocontreras.colepizza.model.Weekday
  */
 object ValoracionesRepository {
 
+    val valoraciones = getValoraciones()
     fun getValoraciones(): Map<Weekday, Map<MenuItem, Rating>> = mapOf(
-        Weekday.LUNES to dia(
+        Weekday.LUNES to fillDia(
             water = Rating.HAPPY,
             starter = Rating.NEUTRAL,
             firstCourse = Rating.HAPPY,
             mainCourse = Rating.SAD,
             dessert = Rating.HAPPY
         ),
-        Weekday.MARTES to dia(
+        Weekday.MARTES to fillDia(
             water = Rating.HAPPY,
             starter = Rating.SAD,
             firstCourse = Rating.NEUTRAL,
             mainCourse = Rating.NEUTRAL,
             dessert = Rating.HAPPY
         ),
-        Weekday.MIERCOLES to dia(
+        Weekday.MIERCOLES to fillDia(
             water = Rating.HAPPY,
             starter = Rating.HAPPY,
             firstCourse = Rating.SAD,
             mainCourse = Rating.HAPPY,
             dessert = Rating.NEUTRAL
         ),
-        Weekday.JUEVES to dia(
+        Weekday.JUEVES to fillDia(
             water = Rating.NEUTRAL,
             starter = Rating.NEUTRAL,
             firstCourse = Rating.HAPPY,
             mainCourse = Rating.SAD,
             dessert = Rating.SAD
         ),
-        Weekday.VIERNES to dia(
+        Weekday.VIERNES to fillDia(
             water = Rating.HAPPY,
             starter = Rating.HAPPY,
             firstCourse = Rating.HAPPY,
@@ -47,7 +48,11 @@ object ValoracionesRepository {
         )
     )
 
-    private fun dia(
+    fun getValoracionDia(dia: Weekday): Map<MenuItem, Rating> {
+        return valoraciones[dia] ?: emptyMap()
+    }
+
+    private fun fillDia(
         water: Rating,
         starter: Rating,
         firstCourse: Rating,
