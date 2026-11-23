@@ -7,6 +7,7 @@ import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import net.iessochoa.sergiocontreras.colepizza.model.Rating
 import net.iessochoa.sergiocontreras.colepizza.ui.theme.ColepizzaTheme
 
 @Composable

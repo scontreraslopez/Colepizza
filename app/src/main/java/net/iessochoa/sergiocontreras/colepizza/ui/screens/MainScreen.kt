@@ -10,13 +10,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import net.iessochoa.sergiocontreras.colepizza.model.Weekday
 import net.iessochoa.sergiocontreras.colepizza.ui.theme.ColepizzaTheme
 
 @Composable
 fun MainScreen(
     modifier: Modifier = Modifier
 ) {
-    val daysOfWeek = listOf("Lunes", "Martes", "Miércoles", "Jueves", "Viernes")
+    val daysOfWeek = Weekday.entries
+
     LazyColumn(
         modifier = modifier
     ) {
@@ -27,7 +29,7 @@ fun MainScreen(
                     .padding(horizontal = 16.dp),
                 onClick = { }
             ) {
-                Text(text = day)
+                Text(text = day.nombre)
             }
             Spacer(modifier = Modifier.padding(vertical = 4.dp))
         }

@@ -1,4 +1,4 @@
-package net.iessochoa.sergiocontreras.colepizza.ui.components
+package net.iessochoa.sergiocontreras.colepizza.model
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
