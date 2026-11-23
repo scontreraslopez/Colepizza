@@ -9,7 +9,7 @@ import net.iessochoa.sergiocontreras.colepizza.model.Weekday
  */
 object ValoracionesRepository {
 
-    val valoraciones = getValoraciones()
+    private val datos = getValoraciones()
     fun getValoraciones(): Map<Weekday, Map<MenuItem, Rating>> = mapOf(
         Weekday.LUNES to fillDia(
             water = Rating.HAPPY,
@@ -49,7 +49,7 @@ object ValoracionesRepository {
     )
 
     fun getValoracionDia(dia: Weekday): Map<MenuItem, Rating> {
-        return valoraciones[dia] ?: emptyMap()
+        return datos[dia] ?: emptyMap()
     }
 
     private fun fillDia(
