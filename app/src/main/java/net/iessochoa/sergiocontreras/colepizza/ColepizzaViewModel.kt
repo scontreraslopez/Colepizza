@@ -28,14 +28,12 @@ class ColepizzaViewModel : ViewModel() {
     ) {
         _uiState.update { currentState ->
 
-            val clickedDay = currentState.valoraciones.getOrDefault(weekday, emptyMap())
-
-                //currentState.valoraciones.filter { it.key == weekday }.values.first()
-            val clickedDayMenuItem = clickedDay.entries.find { it.key == menuItem }
+            // Estaba torpe en clase es un .get no un filter, que para eso tenemos un map. El compilador lo reescribe a [] syntax.
+            val clickedDay = currentState.valoraciones[weekday]?.toMutableMap()!!  // Uff me da pánico el !! pero no debería petar
+            clickedDay[menuItem] = rating
 
             currentState.copy(
-
-
+                valoraciones = currentState.valoraciones + (weekday to clickedDay)
             )
 
         }

@@ -9,6 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import net.iessochoa.sergiocontreras.colepizza.data.ValoracionesRepository
+import net.iessochoa.sergiocontreras.colepizza.model.MenuItem
 import net.iessochoa.sergiocontreras.colepizza.model.Rating
 import net.iessochoa.sergiocontreras.colepizza.ui.ColepizzaUiState
 import net.iessochoa.sergiocontreras.colepizza.ui.components.MenuRow
@@ -18,7 +20,7 @@ import net.iessochoa.sergiocontreras.colepizza.ui.theme.ColepizzaTheme
 @Composable
 fun ColepizzaScreen(
     uiState: ColepizzaUiState,
-    onSelectionClick: (Rating) -> Unit,
+    onSelectionClick: (MenuItem, Rating) -> Unit,
     modifier: Modifier = Modifier
 ) {
 
@@ -39,7 +41,7 @@ fun ColepizzaScreen(
             MenuRow(
                 item = item,
                 selection = rating,
-                onSelection = { onSelectionClick(it) }
+                onSelection = { onSelectionClick(item, it) }
             )
             Spacer(
                 modifier = Modifier.height(16.dp)
@@ -53,7 +55,10 @@ fun ColepizzaScreen(
 fun ColepizzaScreenPreview() {
     ColepizzaTheme {
         ColepizzaScreen(
-
+            uiState = ColepizzaUiState(
+                valoraciones = ValoracionesRepository.getValoraciones()
+            ),
+            onSelectionClick = { _, _ -> }
         )
     }
 }

@@ -8,6 +8,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import net.iessochoa.sergiocontreras.colepizza.model.MenuItem
+import net.iessochoa.sergiocontreras.colepizza.model.Rating
+import net.iessochoa.sergiocontreras.colepizza.model.Weekday
 import net.iessochoa.sergiocontreras.colepizza.ui.screens.ColepizzaScreen
 import net.iessochoa.sergiocontreras.colepizza.ui.theme.ColepizzaTheme
 
@@ -25,10 +28,15 @@ fun ColepizzaApp (
 ) {
 
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val onSelectionClick = { menuItem: MenuItem, rating: Rating ->
+        viewModel.onSelectionClick(Weekday.entries.first(), menuItem, rating)
+    }
 
     ColepizzaTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
             ColepizzaScreen(
+                uiState = uiState,
+                onSelectionClick =  onSelectionClick ,
                 modifier = Modifier.padding(innerPadding)
             )
 
